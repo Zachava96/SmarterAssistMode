@@ -1,4 +1,4 @@
-# Show Precise Accuracy Text
+# Smarter Assist Mode
 
 This mod for UNBEATABLE fixes some bugs with Assist Mode, and allows you to change the offset that Assist Mode will hit notes with.
 
