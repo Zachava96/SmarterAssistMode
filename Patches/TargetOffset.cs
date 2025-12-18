@@ -13,7 +13,7 @@ namespace SmarterAssistMode
         //this is zero by default
         static void Postfix(RhythmController __instance)
         {
-            __instance.assistLeniency = (float)(SmarterAssistMode.NoteTargetOffsetValue.Value / __instance.leniencyMilliseconds);
+            __instance.assistLeniency = (float)(SmarterAssistMode.NoteTargetOffsetValue.Value / RhythmConsts.LeniencyMilliseconds);
         }
     }
 
@@ -26,7 +26,7 @@ namespace SmarterAssistMode
         //to replace 0.8f with the new value
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
         {
-            float newSpikeLeniency = (150f + (float)SmarterAssistMode.SpikeTargetOffsetValue.Value) / 150f;
+            float newSpikeLeniency = (RhythmConsts.LeniencyMilliseconds + (float)SmarterAssistMode.SpikeTargetOffsetValue.Value) / RhythmConsts.LeniencyMilliseconds;
 
             var code = new List<CodeInstruction>(instructions);
 

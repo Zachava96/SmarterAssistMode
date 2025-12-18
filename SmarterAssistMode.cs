@@ -11,13 +11,12 @@ using UnityEngine;
 namespace SmarterAssistMode
 {
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERSION)]
-    [BepInProcess("UNBEATABLE [DEMO].exe")]
-    [BepInProcess("UNBEATABLE [white label].exe")]
+    [BepInProcess("UNBEATABLE.exe")]
     public class SmarterAssistMode : BaseUnityPlugin
     {
         public const string PLUGIN_GUID = "net.zachava.smarterassistmode";
         public const string PLUGIN_NAME = "Smarter Assist Mode";
-        public const string PLUGIN_VERSION = "1.0.0";
+        public const string PLUGIN_VERSION = "2.0.0";
         internal static new ManualLogSource Logger;
         public static ConfigEntry<bool> BetterSpikeVisionEnabled;
         public static ConfigEntry<bool> BetterSpikeInputsEnabled;
@@ -64,11 +63,11 @@ namespace SmarterAssistMode
             SpikeTargetOffsetValue = Config.Bind(
                 "General",
                 "SpikeTargetOffsetValue",
-                -30D,
+                -40D,
                 "How many milliseconds offset from spikes Assist Mode will attempt to dodge spikes.\n" +
                 "Negative values will make it dodge earlier, positive values will make it dodge later.\n" +
-                "This is effectively -30 in the base game.\n" +
-                "Enter -30 to disable this feature."
+                "This is effectively -40 in the base game.\n" +
+                "Enter -40 to disable this feature."
             );
 
             OverlyVerboseLoggingEnabled = Config.Bind(
@@ -112,7 +111,7 @@ namespace SmarterAssistMode
                 Logger.LogInfo("We will NOT patch for Note Target Offset");
             }
 
-            if (SpikeTargetOffsetValue.Value != -30)
+            if (SpikeTargetOffsetValue.Value != -40)
             {
                 Logger.LogInfo($"We will patch for Spike Target Offset: {SpikeTargetOffsetValue.Value}ms");
                 classesToPatch.Add(typeof(SpikeTargetOffset));
