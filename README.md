@@ -8,8 +8,7 @@ This mod for UNBEATABLE fixes some bugs with Assist Mode, and allows you to chan
 
 ## Compatible game versions
 
-- UNBEATABLE Demo (tested with `v1.5.28-contentlock`)
-- UNBEATABLE \[white label\] (tested with `v1.0.11-1`)
+- UNBEATABLE (tested with `v1.5.7.2`)
 
 ## Requirements
 
