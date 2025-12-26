@@ -8,7 +8,7 @@ This mod for UNBEATABLE fixes some bugs with Assist Mode, and allows you to chan
 
 ## Compatible game versions
 
-- UNBEATABLE (tested with `v1.5.7.2`)
+- UNBEATABLE (tested with `v1.6.1`)
 
 ## Requirements
 
