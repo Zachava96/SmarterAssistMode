@@ -147,4 +147,46 @@ namespace SmarterAssistMode
             return code;
         }
     }
+
+    [HarmonyPatch(typeof(RhythmPlayerInput))]
+    [HarmonyPatch("GetAssistAction")]
+    public class BetterSpikeInputsGetAssistAction
+    {
+        static bool Prefix(RhythmPlayerInput __instance, Height height, ref RhythmPlayerInput.ActionState __result)
+        {
+            switch (height)
+            {
+                case Height.Low:
+                    __result = __instance.lowAssist;
+                    return false;
+                case Height.Mid:
+                    RhythmController controller = UnityEngine.Object.FindObjectOfType<RhythmController>();
+                    if (controller == null)
+                    {
+                        SmarterAssistMode.Logger.LogError("Couldn't find RhythmController in BetterSpikeInputsGetAssistAction, this is a bug. Defaulting to returning lowAssist.");
+                        __result = __instance.lowAssist;
+                        return false;
+                    }
+                    else
+                    {
+                        if (controller.upcomingDodgeLow != null && controller.WithinHitRange(controller.upcomingDodgeLow.hitTime + 100))
+                        {
+                            __result = __instance.topAssist;
+                            return false;
+                        }
+                        else
+                        {
+                            __result = __instance.lowAssist;
+                            return false;
+                        }
+                    }
+                case Height.Top:
+                    __result = __instance.topAssist;
+                    return false;
+                default:
+                    __result = null;
+                    return false;
+            }
+        }
+    }
 }

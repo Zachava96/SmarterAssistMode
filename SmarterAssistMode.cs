@@ -16,7 +16,7 @@ namespace SmarterAssistMode
     {
         public const string PLUGIN_GUID = "net.zachava.smarterassistmode";
         public const string PLUGIN_NAME = "Smarter Assist Mode";
-        public const string PLUGIN_VERSION = "2.0.0";
+        public const string PLUGIN_VERSION = "2.1.0";
         internal static new ManualLogSource Logger;
         public static ConfigEntry<bool> BetterSpikeVisionEnabled;
         public static ConfigEntry<bool> BetterSpikeInputsEnabled;
@@ -95,6 +95,7 @@ namespace SmarterAssistMode
             {
                 Logger.LogInfo("We will patch for Better Spike Inputs");
                 classesToPatch.Add(typeof(BetterSpikeInputs));
+                classesToPatch.Add(typeof(BetterSpikeInputsGetAssistAction));
             }
             else
             {

@@ -6,9 +6,11 @@ This mod for UNBEATABLE fixes some bugs with Assist Mode, and allows you to chan
 - Makes Assist Mode not try to dodge spikes that it is already going to dodge (e.g. spikes are coming in the top lane and Beat is standing still in the bottom lane).
 - Allows you to change when Assist Mode will hit notes and dodge spikes.
 
+Please note that this mod is unofficial and not endorsed by D-CELL GAMES in any way.
+
 ## Compatible game versions
 
-- UNBEATABLE (tested with `v1.6.1`)
+- UNBEATABLE (tested with `v1.7.3`)
 
 ## Requirements
 

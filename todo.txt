@@ -1,0 +1,7 @@
+Forever Now 18: 1 Perfect (hold after spike in same lane)
+Hotel Room 20: 1 Okay (spam note after top spike)
+Low 19: 1 Great (note after spike)
+WOT tally-ho 25: 2 Perfects (hold note after spike)
+zero moment 25: 1 perfect (note after spike)
+
+Bug: spikes in a lane will prevent notes behind it from being hit, even if the spike is ignorable for the moment
