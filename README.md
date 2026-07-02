@@ -1,3 +1,5 @@
+## This mod is now deprecated, as most of the rhythm engine bugs have been fixed in the main game.
+
 # Smarter Assist Mode
 
 This mod for UNBEATABLE fixes some bugs with Assist Mode, and allows you to change the offset that Assist Mode will hit notes with.
